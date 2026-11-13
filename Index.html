@@ -1,1 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Experience to Portfolio</title>
+</head>
+<body>
+  <main>
+    <h1>Experience to Portfolio</h1>
+    <p>Make your experience visible.</p>
 
+    <label for="contribution">What did you personally do?</label>
+    <br>
+    <textarea id="contribution" rows="5"
+      placeholder="Example: I coordinated speakers for a club workshop."></textarea>
+    <br>
+    <button id="previewButton" type="button">Preview my contribution</button>
+
+    <h2>Your preview</h2>
+    <p id="preview" aria-live="polite"></p>
+  </main>
+
+  <script>
+    const answer = document.getElementById("contribution");
+    const preview = document.getElementById("preview");
+    const button = document.getElementById("previewButton");
+
+    button.addEventListener("click", function () {
+      preview.textContent = answer.value.trim()
+        || "Write your contribution in the box first.";
+    });
+  </script>
+</body>
+</html>
